@@ -4,9 +4,9 @@
 
 ## 1. Mac бэлтгэл (D2)
 
-- [ ] Унтахгүй байх: `sudo pmset -c sleep 0 disksleep 0` (цэнэглэгчтэй үед). Дэлгэц унтаж болно.
+- [x] (2026-10-22) Унтахгүй байх: `sudo pmset -c sleep 0 disksleep 0` (цэнэглэгчтэй үед). Дэлгэц унтаж болно.
 - [ ] Чөлөөт зай ≥ 20 GB: `df -h /Users/Shared`.
-- [ ] Release tag: `git tag xo-v2026.10.DD && git push origin xo-v2026.10.DD` (push бүрд ED зөвшөөрнө).
+- [x] (2026-10-22, xo-v2026.10.22) Release tag: `git tag xo-v2026.10.DD && git push origin xo-v2026.10.DD` (push бүрд ED зөвшөөрнө).
 - [x] Пилотын хавтас home-оос гадна (2026-10-22, sudo-гүй үүссэн; claude-config хавтсыг мөн үүсгэ):
 
 ```bash
