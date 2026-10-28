@@ -5,7 +5,7 @@
 ## 1. Mac бэлтгэл (D2)
 
 - [x] (2026-10-22) Унтахгүй байх: `sudo pmset -c sleep 0 disksleep 0` (цэнэглэгчтэй үед). Дэлгэц унтаж болно.
-- [ ] Чөлөөт зай ≥ 20 GB: `df -h /Users/Shared`.
+- [x] Чөлөөт зай ≥ 20 GB: `df -h /Users/Shared`. 2026-10-28: 25 GiB чөлөөтэй (94% дүүрсэн), босгоос ахиу бага.
 - [x] (2026-10-22, xo-v2026.10.22) Release tag: `git tag xo-v2026.10.DD && git push origin xo-v2026.10.DD` (push бүрд ED зөвшөөрнө).
 - [x] Пилотын хавтас home-оос гадна (2026-10-22, sudo-гүй үүссэн; claude-config хавтсыг мөн үүсгэ):
 
@@ -76,8 +76,16 @@ for f in backup health; do
 done
 ```
 
-- [ ] Шалгах: `launchctl print gui/$(id -u)/com.ateamgpt.xo.health | grep -E "state|last exit"`.
-- [ ] Лог: /Users/Shared/xo/logs/{backup,health}.log.
+**macOS TCC.** launchd-ийн /bin/bash ~/Desktop (iCloud) доторх скриптийг уншиж чадахгүй (exit 126, "Operation not permitted"). Repo Desktop дотор байвал скриптийг /Users/Shared/xo/ops руу хуулж, plist-ийн ProgramArguments-ийг тийш заа. Скрипт repo-д өөрчлөгдвөл дахин хуул:
+
+```bash
+mkdir -p /Users/Shared/xo/ops && cp "$REPO/scripts/xo-ops/healthcheck.sh" /Users/Shared/xo/ops/ && chmod +x /Users/Shared/xo/ops/healthcheck.sh
+```
+
+- [x] Health суусан (2026-10-28): /Users/Shared/xo/ops/healthcheck.sh, 5 минут тутам, last exit 0. Амжилттай шалгалт лог бичдэггүй; health.log-д зөвхөн алдаа орно (22:40-ийн 126 мөр нь TCC засварын өмнөх).
+- [x] Шалгах: `launchctl print gui/$(id -u)/com.ateamgpt.xo.health | grep -E "state|runs|last exit"`.
+- [ ] Backup job суугаагүй (нөөцийн шийдвэрийг хүлээж байна).
+- Лог: /Users/Shared/xo/logs/{backup,health}.log.
 - Health plist-д `XO_LAUNCHD_LABEL=com.ateamgpt.xo.server` нэмбэл health алдаа гарахад server-ийг дахин эхлүүлнэ.
 
 **Server job (D2).** com.ateamgpt.xo.server.plist нь `run --instance xo-pilot`-ийг XO_HOME, CLAUDE_CONFIG_DIR (D4), PAPERCLIP_SERVICE_MANAGED=1-тэй ажиллуулна; RunAtLoad + KeepAlive. CLI-ийн `--install-service`-ийг хэрэглэхгүй: тэр нь ~/.local/bin/paperclipai shim шаарддаг, CLAUDE_CONFIG_DIR дамжуулдаггүй. Суулгахын өмнө гараар асаасан server-ээ зогсоо (порт 3100, 54329).
