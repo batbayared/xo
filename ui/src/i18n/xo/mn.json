@@ -4749,7 +4749,7 @@
   "Git status": "Git төлөв",
   "GitHub": "GitHub",
   "GitHub access could not be checked. Try again.": "GitHub хандалтыг шалгаж чадсангүй. Дахин оролдоно уу.",
-  "GitHub access is required. Install Paperclip and grant at least one repository, then try again.": "GitHub хандалт шаардлагатай. XO-г суулгаж, дор хаяж нэг репод хандах эрх олгоод дахин оролдоно уу.",
+  "GitHub access is required. Install Paperclip and grant at least one repository, then try again.": "GitHub хандалт шаардлагатай. GitHub App-ийг суулгаж, дор хаяж нэг репод хандах эрх олгоод дахин оролдоно уу.",
   "GitHub access refreshed": "GitHub хандалтыг шинэчиллээ",
   "GitHub account": "GitHub бүртгэл",
   "GitHub Apps cannot upload file bytes in comments. Checked files stay on the {{brand}} task; GitHub receives an authenticated task link when this Board has a public URL, or a private-task notice otherwise.": "GitHub Apps сэтгэгдэлд файлын өгөгдөл байршуулж чаддаггүй. Сонгосон файлууд {{brand}} даалгавар дээр үлдэнэ; энэ Удирдах зөвлөл нийтийн URL-тай бол GitHub баталгаажсан даалгаврын холбоос, үгүй бол хувийн даалгаврын мэдэгдэл хүлээн авна.",
