@@ -36,9 +36,11 @@ pnpm paperclipai onboard
 
 **Тусгаарлалтын тест** (сонголтоо хийсний дараа заавал):
 
-- [ ] Пилот компанид нэг богино task үүсгэ: «Чиний ачаалсан CLAUDE.md файлуудын замыг жагсаа, агуулгыг бүү хуул».
+- [x] Пилот компанид нэг богино task үүсгэ: «Чиний ачаалсан CLAUDE.md файлуудын замыг жагсаа, агуулгыг бүү хуул». (2026-10-28: XO-19, QCLead-д оноосон.)
 - [ ] Хариунд /Users/batbayardavaanyam/.claude/CLAUDE.md эсвэл Монгол хэлний дүрэм гарч ирвэл тусгаарлалт ажиллаагүй.
 - [ ] Үр дүнг энэ файлд огноотой тэмдэглэ.
+
+**2026-10-28-ны үр дүн (хагас):** Агентын тест дуусаагүй. XO-19-ийн run 8637eb02 ба 2a3ad670 хоёулаа «ACP agent reported a terminal limit failure» (acpx_turn_failed, exit 1) алдаагаар унасан, stderr хоосон; 10-22-ны run-ууд ч мөн адил. Тиймээс агентын хариугаар батлах боломжгүй байна. Файлын түвшний шалгалт цэвэр гарсан: /Users/Shared/xo/claude-config-д зөвхөн .claude.json ба backups/ байгаа, CLAUDE.md байхгүй; агентын ажлын хавтас /Users/Shared/xo/instances/xo-pilot/workspaces/<agent>/ ба түүний дээд хавтсуудад (/Users/Shared/xo, /Users/Shared, /Users) CLAUDE.md байхгүй; adapter --setting-sources user дамжуулдаг. Run-ий алдааг засаад тестийг дахин ажиллуулна (XO-19 retry дараалалд байгаа).
 
 ## 3. Нөөцлөлт (D3)
 
