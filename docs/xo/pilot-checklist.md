@@ -68,7 +68,7 @@ gunzip -c /Users/Shared/xo-backups/YYYY-MM-DD/instance/data/backups/<файл>.s
 Загварууд: scripts/xo-ops/launchd/. __REPO__ ба __NODE_BIN__-ийг орлуулаад:
 
 ```bash
-NODE_BIN="$(dirname "$(which node)")"; REPO="$HOME/dev/paperclip-mn"
+NODE_BIN="$(dirname "$(which node)")"; REPO="$HOME/dev/xo"
 for f in backup health; do
   sed -e "s#__REPO__#$REPO#g" -e "s#__NODE_BIN__#$NODE_BIN#g" \
     "$REPO/scripts/xo-ops/launchd/com.ateamgpt.xo.$f.plist" > "$HOME/Library/LaunchAgents/com.ateamgpt.xo.$f.plist"

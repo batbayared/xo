@@ -14,13 +14,13 @@ set -euo pipefail
 #   XO_INSTANCE_ID       instance id (default: xo-pilot)
 #   XO_BACKUP_DEST       destination root (default: /Users/Shared/xo-backups)
 #   XO_BACKUP_KEEP_DAYS  daily copies to keep (default: 14)
-#   XO_REPO              paperclip-mn checkout (default: ~/dev/paperclip-mn)
+#   XO_REPO              XO checkout (default: ~/dev/xo)
 
 XO_HOME="${XO_HOME:-/Users/Shared/xo}"
 XO_INSTANCE_ID="${XO_INSTANCE_ID:-xo-pilot}"
 XO_BACKUP_DEST="${XO_BACKUP_DEST:-/Users/Shared/xo-backups}"
 XO_BACKUP_KEEP_DAYS="${XO_BACKUP_KEEP_DAYS:-14}"
-XO_REPO="${XO_REPO:-$HOME/dev/paperclip-mn}"
+XO_REPO="${XO_REPO:-$HOME/dev/xo}"
 
 INSTANCE_DIR="$XO_HOME/instances/$XO_INSTANCE_ID"
 DUMP_DIR="$INSTANCE_DIR/data/backups"
