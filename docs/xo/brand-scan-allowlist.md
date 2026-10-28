@@ -10,7 +10,7 @@ PAPERCLIP_* орчны хувьсагч, X-Paperclip-* header, @paperclipai ба
 
 ## Төлөв (2026-10-22)
 
-65 файл, 116 тохиолдол. Хэрэглэгчид харагдах, аюулгүй солих боломжтой тохиолдол олдсонгүй.
+65 файл, 114 тохиолдол (2026-10-28). Хэрэглэгчид харагдах, аюулгүй солих боломжтой тохиолдол олдсонгүй.
 
 | Ангилал | Тоо | Яагаад үлдээсэн |
 |---|---:|---|
@@ -18,14 +18,12 @@ PAPERCLIP_* орчны хувьсагч, X-Paperclip-* header, @paperclipai ба
 | Кодын тайлбар (comment, JSDoc) | 57 | Хэрэглэгчид харагдахгүй. Upstream-ийн тайлбарыг хөндвөл синкийн зөрчил нэмэгдэнэ. |
 | Серверийн англи текст тааруулах literal | 9 | Сервер «Paperclip ...» гэж бичсэн мессежийг яг тааруулж орчуулна: xo/serverMessage.ts (2), xo/labels.ts (4), lib/successful-run-handoff.ts (3). Солиход тааруулалт эвдэрнэ. |
 | UX lab fixture | 11 | fixtures/systemNoticeFixtures.ts: SystemNoticeUxLab хуудасны жишээ өгөгдөл, серверийн мэдэгдлийг дуурайна. |
-| GitHub App нэр | 2 | features/connections/ConnectionSetupFlow.tsx:181, 2591. GitHub дээрх App-ийн жинхэнэ нэр «Paperclip». |
-| **Нийт** | **116** | |
+| **Нийт** | **114** | |
 
 ## Тэмдэглэл
 
-- ConnectionSetupFlow.tsx:2591-ийн «Install Paperclip on GitHub» нь tx()-ээр ороогдоогүй
-  англи JSX текст. Энэ нь брэндийн биш, i18n-ий үлдэгдэл. XO өөрийн GitHub App бүртгэвэл
-  энэ хоёр мөрийг App-ийн нэрээр солино.
+- ConnectionSetupFlow.tsx-ийн GitHub App-ийн хоёр текстийг 2026-10-28-нд «the GitHub App» болгож, tx()-ээр ороосон
+  (App-ийн нэрийг заахгүй тул GitHub-ийн managed App солигдсон ч зөв хэвээр).
 - Upstream синкийн дараа скан baseline-аас давбал шинэ тохиолдлыг дээрх ангиллаар шүүнэ:
   хэрэглэгчид харагдах текст бол XO болгож засна, бусад тохиолдолд
   `node scripts/xo-brand/scan.mjs --update`-аар baseline шинэчилнэ.

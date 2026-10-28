@@ -178,7 +178,7 @@ function oauthCallbackErrorMessage(outcome: string | null, code: string | null):
     return tx("Authorization was cancelled or declined. Your saved connection was not changed.");
   }
   if (code === "github_installation_required") {
-    return tx("GitHub access is required. Install Paperclip and grant at least one repository, then try again.");
+    return tx("GitHub access is required. Install the GitHub App and grant at least one repository, then try again.");
   }
   return tx("Authorization did not complete. Your saved connection is still here, so you can try again.");
 }
@@ -2588,7 +2588,7 @@ export function OAuthConnectStateScreen({
             {recoveryActions.installationUrl ? (
               <Button type="button" variant="outline" asChild>
                 <a href={recoveryActions.installationUrl} target="_blank" rel="noreferrer">
-                  Install Paperclip on GitHub
+                  {tx("Install the GitHub App")}
                   <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
                 </a>
               </Button>

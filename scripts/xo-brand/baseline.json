@@ -29,7 +29,7 @@
   "ui/src/components/task-chat/transcript-adapter.ts": 3,
   "ui/src/components/TaskChatThread.tsx": 1,
   "ui/src/components/ui/resizable-panels.tsx": 1,
-  "ui/src/features/connections/ConnectionSetupFlow.tsx": 6,
+  "ui/src/features/connections/ConnectionSetupFlow.tsx": 4,
   "ui/src/fixtures/systemNoticeFixtures.ts": 11,
   "ui/src/hooks/useCloudInstance.ts": 1,
   "ui/src/lib/adapter-test-environment.ts": 1,
